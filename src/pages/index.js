@@ -1,6 +1,6 @@
 import React from "react"
 import "./index.less"
-import rabbitIndex from "../images/rabbit-index.png"
+import rabbitIndex from "../images/rabbit-index.svg"
 
 
 const IndexPage = () => (
