@@ -1,0 +1,55 @@
+body {
+  font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono", "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.bg {
+  width: 100%;
+  min-height: 100vh;
+  background: url("../images/bg-index.png") no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  //justify-content: center;
+}
+
+@keyframes bounce {
+  0% {
+    top: 0;
+  }
+  25% {
+    top: -12px;
+  }
+  50% {
+    top: -20px;
+  }
+  75% {
+    top: -12px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.rabbit {
+  position: relative;
+  width: 250px;
+  height: 541px;
+  animation-name: bounce;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.generate {
+  margin-top: 16px;
+  border: 5px solid #333;
+  border-radius: 26px;
+  padding: 8px 24px;
+  width: 300px;
+  color: #fffffe;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  background-image: linear-gradient(to right, #fb6262, #ff7151, #ff833f, #ff972a, #f8ab10);
+}
