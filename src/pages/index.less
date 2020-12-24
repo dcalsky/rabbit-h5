@@ -17,26 +17,37 @@ body {
 
 @keyframes bounce {
   0% {
-    top: 5px;
+    transform: translateY(0);
   }
   25% {
-    top: -2px;
+    transform: translateY(-8px);
   }
   50% {
-    top: -10px;
+    transform: translateY(-18px);
   }
   75% {
-    top: -2px;
+    transform: translateY(-8px);
   }
   100% {
-    top: 5px;
+    transform: translateY(0);
   }
 }
 
 .rabbit {
   position: relative;
   width: 280px;
-  height: 525px;
+  height: 500px;
+}
+
+@media screen and (max-width: 321px) {
+  .rabbit {
+    position: relative;
+    width: 220px;
+    height: 420px;
+  }
+  .heart {
+    top: -20px;
+  }
 }
 
 .heart {
