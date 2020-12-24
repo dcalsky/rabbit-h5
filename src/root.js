@@ -22,10 +22,17 @@ const RootElement = ({ element }) => {
     })
   }, [])
   return (
-    <div className="root">{loading ? <div>
-      <ReactLoading className="loading" type="balls" width="300px" />
-      <h1>加载中</h1>
-    </div> : element}</div>
+    <div className="root">
+      {
+        loading ?
+          <div>
+            <ReactLoading className="loading" type="balls" width="300px" />
+            <h1>加载中</h1>
+          </div>
+          :
+          element
+      }
+    </div>
   )
 }
 
