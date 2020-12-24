@@ -7,6 +7,7 @@ import bottomRabbitSVG from "../images/2m.png"
 import zh from "date-fns/locale/zh-CN"
 import my2021 from "../images/my2021.png"
 import "./input.less"
+import { navigate } from "gatsby"
 
 registerLocale("zh", zh)
 
@@ -15,19 +16,29 @@ const InputPage = () => {
   const handleDateChangeRaw = (e) => {
     e.preventDefault()
   }
+  const [username, setUsername] = useState()
+  const navigateToResult = () => {
+    if (!username || username.trim() === "") {
+      alert("名字不能为空")
+      return
+    }
+    if (!startDate) {
+      alert("请选择一个生日")
+      return
+    }
+    navigate("/result")
+  }
   return (
     <div className="input-page">
       <div className="bg">
         <img className="bottom-rabbit" src={bottomRabbitSVG} />
         <div className="controls">
-          {/*<div className="title">我的2021<span className="subtitle">@两米兔</span></div>*/}
           <div className="title-box">
-            <img className="title" src={my2021} alt="" />
+            <img className="title" src={my2021} alt="2021" />
           </div>
-
           <div className="control">
             <img className="icon" src={smileSVG} />
-            <input type="text" placeholder="输入你的名字" />
+            <input type="text" placeholder="输入你的名字" onChange={(e) => setUsername(e.target.value)} />
           </div>
           <div className="control">
             <img className="icon" src={calendarSVG} />
@@ -42,7 +53,9 @@ const InputPage = () => {
               customInput={<input type="text" />}
             />
           </div>
-          <button unselectable="off" className="generate">*一键生成*</button>
+          <button onClick={navigateToResult} className="generate" unselectable="off">
+            *一键生成*
+          </button>
         </div>
 
       </div>

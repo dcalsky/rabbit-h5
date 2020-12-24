@@ -3,13 +3,14 @@ import "./result.less"
 import { navigate } from "gatsby"
 
 
-const ResultPage = () => (
+const ResultPage = () => {
+  return (
+    <>
+      <div className="bg">
 
-  <>
-    <div className="bg">
-
-    </div>
-  </>
-)
+      </div>
+    </>
+  )
+}
 
 export default ResultPage

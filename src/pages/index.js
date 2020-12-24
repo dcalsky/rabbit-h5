@@ -2,7 +2,8 @@ import React from "react"
 import "./index.less"
 import rabbitSVG from "../images/rabbit-index.svg"
 import heartSVG from "../images/heart.svg"
-import { navigate } from "gatsby"
+import { Link, navigate } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const IndexPage = () => {
   return (
@@ -10,13 +11,9 @@ const IndexPage = () => {
       <div className="bg">
         <img className="rabbit" src={rabbitSVG} alt="这里有个兔子" />
         <img className="heart" src={heartSVG} alt="这里有一些爱心" />
-        <button unselectable="off" className="generate" onClick={() => {
-          navigate(
-            "/input/",
-            {}
-          )
-        }}>*开始生成我的2021*
-        </button>
+        <AniLink to="/input" swipe direction="left" className="generate" unselectable="off">
+          *开始生成我的2021*
+        </AniLink>
       </div>
     </div>
   )
