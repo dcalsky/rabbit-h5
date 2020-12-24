@@ -10,7 +10,7 @@ const IndexPage = () => {
       <div className="bg">
         <img className="rabbit" src={rabbitSVG} alt="这里有个兔子" />
         <img className="heart" src={heartSVG} alt="这里有一些爱心" />
-        <button unselectable={true} className="generate" onClick={() => {
+        <button unselectable="off" className="generate" onClick={() => {
           navigate(
             "/input/",
             {}

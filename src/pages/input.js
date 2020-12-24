@@ -42,7 +42,7 @@ const InputPage = () => {
               customInput={<input type="text" />}
             />
           </div>
-          <button unselectable={true} className="generate">*一键生成*</button>
+          <button unselectable="off" className="generate">*一键生成*</button>
         </div>
 
       </div>

@@ -3,8 +3,9 @@ import React from "react"
 import "./root.less"
 import ReactLoading from "react-loading"
 
+const imagesCache = {}
+
 const RootElement = ({ element }) => {
-  const imagesCache = {}
   const [loading, setLoading] = useState(true)
   const importImages = async () => {
     const importAll = requireContext => requireContext.keys().forEach(key => imagesCache[key] = requireContext(key))
