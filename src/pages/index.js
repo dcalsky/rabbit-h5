@@ -11,7 +11,7 @@ const IndexPage = () => {
       <div className="bg">
         <img className="rabbit" src={rabbitSVG} alt="这里有个兔子" />
         <img className="heart" src={heartSVG} alt="这里有一些爱心" />
-        <AniLink to="/input" swipe direction="left" className="generate" unselectable="off">
+        <AniLink to="/input" swipe direction="left" top="entry" className="generate" unselectable="off">
           *开始生成我的2021*
         </AniLink>
       </div>
