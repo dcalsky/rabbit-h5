@@ -11,6 +11,9 @@ registerLocale("zh", zh)
 
 const IndexPage = () => {
   const [startDate, setStartDate] = useState()
+  const handleDateChangeRaw = (e) => {
+    e.preventDefault()
+  }
   return (
     <div className="input-page">
       <div className="bg">
@@ -29,13 +32,14 @@ const IndexPage = () => {
               showMonthYearPicker
               locale="zh"
               placeholderText="选择你的生日"
+              onChangeRaw={handleDateChangeRaw}
               customInput={<input type="text" />}
             />
           </div>
           <button unselectable={true} className="generate">*一键生成*</button>
         </div>
+        <img className="bottom-rabbit" src={bottomRabbitSVG} />
       </div>
-      <img className="bottom-rabbit" src={bottomRabbitSVG} />
     </div>
   )
 }
