@@ -9,7 +9,7 @@ import "./input.less"
 
 registerLocale("zh", zh)
 
-const IndexPage = () => {
+const InputPage = () => {
   const [startDate, setStartDate] = useState()
   const handleDateChangeRaw = (e) => {
     e.preventDefault()
@@ -44,4 +44,4 @@ const IndexPage = () => {
   )
 }
 
-export default IndexPage
+export default InputPage
