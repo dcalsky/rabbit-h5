@@ -3,8 +3,9 @@ import DatePicker, { registerLocale } from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 import smileSVG from "../images/smile-fill.svg"
 import calendarSVG from "../images/calendar-fill.svg"
-import bottomRabbitSVG from "../images/bottom-rabbit.svg"
+import bottomRabbitSVG from "../images/2m.png"
 import zh from "date-fns/locale/zh-CN"
+import my2021 from "../images/my2021.png"
 import "./input.less"
 
 registerLocale("zh", zh)
@@ -17,8 +18,13 @@ const InputPage = () => {
   return (
     <div className="input-page">
       <div className="bg">
+        <img className="bottom-rabbit" src={bottomRabbitSVG} />
         <div className="controls">
-          <div className="title">我的2021<span className="subtitle">@两米兔</span></div>
+          {/*<div className="title">我的2021<span className="subtitle">@两米兔</span></div>*/}
+          <div className="title-box">
+            <img className="title" src={my2021} alt="" />
+          </div>
+
           <div className="control">
             <img className="icon" src={smileSVG} />
             <input type="text" placeholder="输入你的名字" />
@@ -38,7 +44,7 @@ const InputPage = () => {
           </div>
           <button unselectable={true} className="generate">*一键生成*</button>
         </div>
-        <img className="bottom-rabbit" src={bottomRabbitSVG} />
+
       </div>
     </div>
   )
