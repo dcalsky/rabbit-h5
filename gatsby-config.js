@@ -11,6 +11,7 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-less",
+    "gatsby-plugin-webpack-bundle-analyser-v2",
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-react-helmet`,
     {
@@ -38,7 +39,7 @@ module.exports = {
       resolve: "@sentry/gatsby",
       options: {
         dsn: "https://a2dbda3ecfbd4480be79a76e59f37be0@o496468.ingest.sentry.io/5571239",
-        tracesSampleRate: 1,
+        tracesSampleRate: 1
       }
     }
   ]
