@@ -1,5 +1,10 @@
+const activeEnv =
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
+
+const dev = activeEnv === "development"
+
 module.exports = {
-  assetPrefix: `https://bbq.noddl.me/rabbit`,
+  assetPrefix: dev ? "" : `https://bbq.noddl.me/rabbit`,
   siteMetadata: {
     title: `两米兔的2021`,
     author: `@两米兔`
