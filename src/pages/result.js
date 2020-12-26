@@ -65,8 +65,8 @@ const ResultPage = ({ location }) => {
   }
   const words = pickNWords(4)
   const { username } = location.state
-  const [image] = useImage(resultSVG, "Anonymous")
-  const [qrCode] = useImage(qrImage, "Anonymous")
+  const [image] = useImage("https://cdn.jsdelivr.net/gh/dcalsky/bbq/rabbit/result.png", "Anonymous")
+  const [qrCode] = useImage("https://cdn.jsdelivr.net/gh/dcalsky/bbq/rabbit/qr.png", "Anonymous")
   const [finalImage, setFinalImage] = useState(null)
   const [stage, setStage] = useState(null)
   let imgWidth = 0
