@@ -26,7 +26,13 @@ const InputPage = () => {
       alert("请选择一个生日")
       return
     }
-    navigate("/result")
+    localStorage.setItem("username", username)
+    navigate("/result", {
+      state: {
+        username,
+        startDate
+      }
+    })
   }
   return (
     <div className="input-page">
@@ -57,7 +63,6 @@ const InputPage = () => {
             *一键生成*
           </button>
         </div>
-
       </div>
     </div>
   )
