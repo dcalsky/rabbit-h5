@@ -108,7 +108,7 @@ const ResultPage = ({ location }) => {
     <div className="result-page">
       <div className="bg">
         <div className="links">
-          <span>weibo: <span style={{ fontWeight: 600 }}>INBING</span></span>
+          <span>weibo: <a className="bee" href="https://weibo.com/u/2873304745">INBing</a></span>
           <span style={{ margin: "0 10px" }}>/</span>
           <span>more: <a className="bee"
                          href="https://www.noddl.me">次元蜜蜂</a>
@@ -125,19 +125,20 @@ const ResultPage = ({ location }) => {
               </Layer>
               <Layer>
                 <Image x={gap / 2} y={gap / 2} width={imgWidth} height={imgHeight} image={image} />
-                <Text fontFamily="happy" x={175} y={115} fontSize={23} width={48} height={48} fill="#ffffff"
+                <Text fontFamily="happy" x={170} y={115} fontSize={23} width={48} height={48} fill="#ffffff"
                       text={words[0]} />
-                <Text fontFamily="happy" x={218} y={175} fontSize={23} width={48} height={48} fill="#ffffff"
+                <Text fontFamily="happy" x={215} y={175} fontSize={21} width={48} height={48} fill="#ffffff"
                       text={words[1]} />
-                <Text fontFamily="happy" x={165} y={205} fontSize={23} width={48} height={48} fill="#ffffff"
+                <Text fontFamily="happy" x={167} y={205} fontSize={21} width={48} height={48} fill="#ffffff"
                       text={words[2]} />
-                <Text fontFamily="happy" x={98} y={205} fontSize={23} width={48} height={48} fill="#ffffff"
+                <Text fontFamily="happy" x={108} y={205} fontSize={21} width={48} height={48} fill="#ffffff"
                       text={words[3]} />
-                <Text width={260} x={gap / 2} y={imgHeight + 45} fontSize={25} fontStyle="bold" fill="#A1A1A1"
+                <Text width={270} x={gap / 2} height={10} y={imgHeight + 45} fontSize={23} fontStyle="bold"
+                      fill="#A1A1A1"
                       text={`2021的${username}`} />
-                <Text x={gap / 2} y={imgHeight + 45 + 40} fontSize={18} fontStyle="bold" fill="#A1A1A1"
+                <Text x={gap / 2} y={imgHeight + 42 + 40} fontSize={18} fontStyle="bold" fill="#A1A1A1"
                       text={"寒来暑往，新年快乐。"} />
-                <Text x={gap / 2} y={imgHeight + 45 + 40 + 25} fontSize={12} fontStyle="bold" fill="#C7C7C7"
+                <Text x={gap / 2} y={imgHeight + 42 + 40 + 25} fontSize={12} fontStyle="bold" fill="#C7C7C7"
                       text={"长按图片 一起生成你的「2021」"} />
                 <Image image={qrCode} width={64} height={64} x={screenWidth - gap / 2 - 64}
                        y={imgHeight + 45} />
