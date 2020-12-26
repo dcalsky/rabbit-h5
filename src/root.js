@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import React from "react"
 import "./root.less"
 import ReactLoading from "react-loading"
+import { Helmet } from "react-helmet"
 
 const imagesCache = {}
 const BASE_URL = "https://cdn.jsdelivr.net/gh/dcalsky/bbq/rabbit/"
@@ -29,9 +30,24 @@ const RootElement = ({ element }) => {
     importImages().then(() => {
       setLoading(false)
     })
+    const script = document.createElement("script")
+
+    script.src = "https://hm.baidu.com/hm.js?e50e1c1cac50735db8706c8c72902203"
+    script.async = true
+
+    document.body.appendChild(script)
+
+    return () => {
+      document.body.removeChild(script)
+    }
   }, [])
   return (
     <div className="root">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>我的2021关键词</title>
+        <meta name="description" content="两米兔|2021|关键词|新年" />
+      </Helmet>
       {
         loading ?
           <div>

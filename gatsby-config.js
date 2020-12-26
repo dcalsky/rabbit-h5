@@ -6,7 +6,7 @@ const dev = activeEnv === "development"
 module.exports = {
   assetPrefix: dev ? "" : `https://bbq.noddl.me/rabbit`,
   siteMetadata: {
-    title: `两米兔的2021`,
+    title: `我的2021关键词`,
     author: `@两米兔`
   },
   plugins: [
@@ -25,8 +25,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `我的2021关键词`,
+        short_name: `我的2021关键词`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
