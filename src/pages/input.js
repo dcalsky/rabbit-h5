@@ -50,9 +50,11 @@ const InputPage = () => {
             <img className="icon" src={calendarSVG} />
             <DatePicker
               selected={startDate}
-              dateFormat="yyyy年MM月"
+              dateFormat="yyyy年"
               onChange={date => setStartDate(date)}
-              showMonthYearPicker
+              showYearPicker
+              showYearDropdown
+              maxDate={new Date()}
               locale="zh"
               placeholderText="选择你的生日"
               onChangeRaw={handleDateChangeRaw}

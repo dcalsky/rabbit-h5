@@ -3,9 +3,9 @@ import "./result.less"
 import { navigate } from "gatsby"
 import { Stage, Layer, Rect, Text, Image } from "react-konva"
 import FontFaceObserver from "fontfaceobserver"
-import resultSVG from "../images/result.png"
+// import resultSVG from "../images/result.png"
 import useImage from "use-image"
-import qrImage from "../images/qr.png"
+// import qrImage from "../images/qr.png"
 
 const gap = 50
 const screenWidth = 375
@@ -33,8 +33,6 @@ const words = [
   "红红火火",
   "会穿秋裤",
   "五颜六色",
-  "万物生长",
-  "就这样吧",
   "重在参与",
   "好吃好喝",
   "充实日常",
@@ -56,7 +54,6 @@ const pickNWords = (n) => {
 }
 
 const ResultPage = ({ location }) => {
-  let drawed = false
   const font = new FontFaceObserver("happy")
   const [loading, setLoading] = useState(true)
   const [fontLoaded, setFontLoaded] = useState(false)
@@ -94,7 +91,6 @@ const ResultPage = ({ location }) => {
       stage.toImage({
         callback(img) {
           setFinalImage(img)
-          drawed = true
         },
         mimeType: "image/jpeg",
         quality: 1,
@@ -106,16 +102,23 @@ const ResultPage = ({ location }) => {
     navigate("/input", { replace: true })
   }
   const saveImage = () => {
-    alert("请长按图片保存")
+    alert("长按保存")
   }
   return (
     <div className="result-page">
       <div className="bg">
         <div className="links">
-          <span>weibo: <b>INBING</b></span> <span>/</span> <span>more: <b>次元蜜蜂</b></span>
+          <span>weibo: <span style={{ fontWeight: 600 }}>INBING</span></span>
+          <span style={{ margin: "0 10px" }}>/</span>
+          <span>more: <a className="bee"
+                         href="https://www.noddl.me">次元蜜蜂</a>
+          </span>
         </div>
         {
-          loading ? <h1>生成中...</h1> :
+          loading ? <img
+              style={{ marginTop: 30 }}
+              src="https://cdn.jsdelivr.net/gh/dcalsky/bbq/rabbit/loading.gif" alt="Loading" />
+            :
             <Stage ref={measuredRef} className="stage" width={screenWidth} height={640}>
               <Layer>
                 <Rect width={screenWidth} height={640} fill="#ffffff" />
@@ -130,7 +133,7 @@ const ResultPage = ({ location }) => {
                       text={words[2]} />
                 <Text fontFamily="happy" x={98} y={205} fontSize={23} width={48} height={48} fill="#ffffff"
                       text={words[3]} />
-                <Text x={gap / 2} y={imgHeight + 45} fontSize={26} fontStyle="bold" fill="#A1A1A1"
+                <Text width={260} x={gap / 2} y={imgHeight + 45} fontSize={25} fontStyle="bold" fill="#A1A1A1"
                       text={`2021的${username}`} />
                 <Text x={gap / 2} y={imgHeight + 45 + 40} fontSize={18} fontStyle="bold" fill="#A1A1A1"
                       text={"寒来暑往，新年快乐。"} />
