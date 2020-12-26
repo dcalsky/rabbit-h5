@@ -3,6 +3,7 @@ import DatePicker, { registerLocale } from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 import smileSVG from "../images/smile-fill.svg"
 import calendarSVG from "../images/calendar-fill.svg"
+import * as Sentry from "@sentry/react"
 // import bottomRabbitSVG from "../images/2m.png"
 import zh from "date-fns/locale/zh-CN"
 // import my2021 from "../images/my2021.png"
@@ -27,11 +28,16 @@ const InputPage = () => {
       return
     }
     localStorage.setItem("username", username)
+    const state = {
+      username,
+      startDate
+    }
+    const transaction = Sentry.startTransaction({ name: "generate" })
+    transaction.setData("username", username)
+    transaction.setData("birthday", startDate.getFullYear())
+    transaction.finish()
     navigate("/result", {
-      state: {
-        username,
-        startDate
-      }
+      state
     })
   }
   return (

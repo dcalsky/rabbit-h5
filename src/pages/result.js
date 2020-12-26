@@ -76,10 +76,10 @@ const ResultPage = ({ location }) => {
     setFontLoaded(true)
   })
   useEffect(() => {
-    if (image && fontLoaded) {
+    if (image && fontLoaded && qrCode) {
       setLoading(false)
     }
-  }, [image, fontLoaded])
+  }, [image, fontLoaded, qrCode])
   const measuredRef = useCallback(node => {
     if (node !== null && !loading) {
       setStage(node)

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import React from "react"
 import "./root.less"
-import ReactLoading from "react-loading"
 
 const imagesCache = {}
 const BASE_URL = "https://cdn.jsdelivr.net/gh/dcalsky/bbq/rabbit/"
