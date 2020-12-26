@@ -4,12 +4,16 @@ import { Helmet } from "react-helmet"
 const React = require("react")
 
 export const wrapRootElement = ({ element }) => {
+  const coverImage = new Image(0, 0)
+  coverImage.src = "https://cdn.jsdelivr.net/gh/dcalsky/bbq/rabbit/cover.png"
+  document.body.appendChild(coverImage)
   return (
     <RootElement element={element} />
   )
 }
 
 export const wrapPageElement = ({ element }) => {
+
   return (
     <div>
       <Helmet>
