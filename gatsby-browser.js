@@ -4,9 +4,12 @@ import { Helmet } from "react-helmet"
 const React = require("react")
 
 export const wrapRootElement = ({ element }) => {
-  const coverImage = new Image(0, 0)
+  const coverImage = new Image(410, 410)
   coverImage.src = "https://cdn.jsdelivr.net/gh/dcalsky/bbq/rabbit/cover.png"
-  document.body.appendChild(coverImage)
+  const wrapper = document.createElement("div")
+  wrapper.appendChild(coverImage)
+  wrapper.style.display = "none"
+  document.body.appendChild(wrapper)
   return (
     <RootElement element={element} />
   )
