@@ -4,11 +4,10 @@ import "react-datepicker/dist/react-datepicker.css"
 import smileSVG from "../images/smile-fill.svg"
 import calendarSVG from "../images/calendar-fill.svg"
 import * as Sentry from "@sentry/react"
-// import bottomRabbitSVG from "../images/2m.png"
 import zh from "date-fns/locale/zh-CN"
-// import my2021 from "../images/my2021.png"
 import "./input.less"
 import { navigate } from "gatsby"
+import { my2021Img, rabbitBottomImg } from "../constants"
 
 registerLocale("zh", zh)
 
@@ -43,10 +42,10 @@ const InputPage = () => {
   return (
     <div className="input-page">
       <div className="bg">
-        <img className="bottom-rabbit" src={"https://cdn.jsdelivr.net/gh/dcalsky/bbq/rabbit/2m.png"} />
+        <img className="bottom-rabbit" src={rabbitBottomImg} />
         <div className="controls">
           <div className="title-box">
-            <img className="title" src={"https://cdn.jsdelivr.net/gh/dcalsky/bbq/rabbit/my2021.png"} alt="2021" />
+            <img className="title" src={my2021Img} alt="2021" />
           </div>
           <div className="control">
             <img className="icon" src={smileSVG} />

@@ -3,9 +3,8 @@ import "./result.less"
 import { navigate } from "gatsby"
 import { Stage, Layer, Rect, Text, Image } from "react-konva"
 import FontFaceObserver from "fontfaceobserver"
-// import resultSVG from "../images/result.png"
 import useImage from "use-image"
-// import qrImage from "../images/qr.png"
+import { loadingImg, qrImg, resultImg } from "../constants"
 
 const gap = 50
 const screenWidth = 375
@@ -62,8 +61,8 @@ const ResultPage = ({ location }) => {
   }
   const words = pickNWords(4)
   const { username } = location.state
-  const [image] = useImage("https://cdn.jsdelivr.net/gh/dcalsky/bbq/rabbit/result.png", "Anonymous")
-  const [qrCode] = useImage("https://cdn.jsdelivr.net/gh/dcalsky/bbq/rabbit/qr.png", "Anonymous")
+  const [image] = useImage(resultImg, "Anonymous")
+  const [qrCode] = useImage(qrImg, "Anonymous")
   const [finalImage, setFinalImage] = useState(null)
   const [stage, setStage] = useState(null)
   let imgWidth = 0
@@ -117,7 +116,7 @@ const ResultPage = ({ location }) => {
         {
           loading ? <img
               style={{ marginTop: 30 }}
-              src="https://cdn.jsdelivr.net/gh/dcalsky/bbq/rabbit/loading.gif" alt="Loading" />
+              src={loadingImg} alt="Loading" />
             :
             <Stage ref={measuredRef} className="stage" width={screenWidth} height={640}>
               <Layer>

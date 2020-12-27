@@ -1,30 +1,38 @@
 import { useEffect, useState } from "react"
 import React from "react"
 import "./root.less"
+import * as images from "./constants"
 
 const imagesCache = {}
-const BASE_URL = "https://cdn.jsdelivr.net/gh/dcalsky/bbq/rabbit/"
+const syncUrls = [
+  images.heartImg,
+  images.my2021Img,
+  images.rabbitBottomImg,
+  images.rabbitIndexImg
+]
+const asyncUrls = [
+  images.resultImg,
+  images.qrImg
+]
+const importImages = async () => {
+  // const importAll = requireContext => requireContext.keys().forEach(key => imagesCache[key] = requireContext(key))
+  // importAll(require.context("./images/", false, /\.(svg)|(png)$/))
+  Promise.all(asyncUrls.map(url => {
+    const img = new Image(1, 1)
+    img.src = url
+    return img.decode()
+  })).then(() => {
+    console.log("async images loaded")
+  })
+  await Promise.all(syncUrls.map(url => {
+    const img = new Image(1, 1)
+    img.src = url
+    return img.decode()
+  }))
+}
 
 const RootElement = ({ element }) => {
   const [loading, setLoading] = useState(true)
-  const urls = [
-    "rabbit-index.svg",
-    "heart.svg",
-    "qr.png",
-    "result.png",
-    "my2021.png",
-    "2m.png",
-    "loading.gif"
-  ]
-  const importImages = async () => {
-    // const importAll = requireContext => requireContext.keys().forEach(key => imagesCache[key] = requireContext(key))
-    // importAll(require.context("./images/", false, /\.(svg)|(png)$/))
-    await Promise.all(urls.map(url => {
-      const img = new Image(1, 1)
-      img.src = BASE_URL + url
-      return img.decode()
-    }))
-  }
   useEffect(() => {
     importImages().then(() => {
       setLoading(false)
@@ -36,7 +44,7 @@ const RootElement = ({ element }) => {
         loading ?
           <img
             style={{ position: "absolute", transform: "translate(-50%, -50%)", top: "50%", left: "50%" }}
-            src="https://cdn.jsdelivr.net/gh/dcalsky/bbq/rabbit/loading.gif" alt="Loading" />
+            src={images.loadingImg} alt="Loading" />
           :
           element
       }

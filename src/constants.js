@@ -1,0 +1,8 @@
+const BASE_URL = "https://cdn.jsdelivr.net/gh/dcalsky/bbq/rabbit/"
+export const rabbitIndexImg = BASE_URL + "rabbit-index-1.png"
+export const heartImg = BASE_URL + "heart.png"
+export const qrImg = BASE_URL + "qr-1.png"
+export const resultImg = BASE_URL + "result-1.png"
+export const my2021Img = BASE_URL + "my2021.png"
+export const rabbitBottomImg = BASE_URL + "2m-1.png"
+export const loadingImg = BASE_URL + "loading.gif"
