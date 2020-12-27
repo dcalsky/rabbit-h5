@@ -71,8 +71,10 @@ const ResultPage = ({ location }) => {
     imgWidth = screenWidth - gap
     imgHeight = image.height / image.width * imgWidth
   }
-  font.load(null, 10000).then(() => {
+  font.load(null, 60000).then(() => {
     setFontLoaded(true)
+  }, () => {
+    alert("字体加载失败，请刷新重试。")
   })
   useEffect(() => {
     if (image && fontLoaded && qrCode) {

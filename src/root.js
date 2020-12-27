@@ -33,8 +33,10 @@ const importImages = async () => {
 }
 const importFonts = () => {
   const font = new FontFaceObserver("happy")
-  font.load(null, 10000).then(() => {
+  font.load(null, 60000).then(() => {
     console.log("async fonts loaded")
+  }, () => {
+    alert("字体加载失败，请刷新重试。")
   })
 }
 const RootElement = ({ element }) => {
