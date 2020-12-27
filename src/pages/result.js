@@ -71,7 +71,7 @@ const ResultPage = ({ location }) => {
     imgWidth = screenWidth - gap
     imgHeight = image.height / image.width * imgWidth
   }
-  font.load().then(() => {
+  font.load(null, 10000).then(() => {
     setFontLoaded(true)
   })
   useEffect(() => {

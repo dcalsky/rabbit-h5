@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import React from "react"
 import "./root.less"
 import * as images from "./constants"
+import FontFaceObserver from "fontfaceobserver"
 
 const imagesCache = {}
 const syncUrls = [
@@ -30,13 +31,19 @@ const importImages = async () => {
     return img.decode()
   }))
 }
-
+const importFonts = () => {
+  const font = new FontFaceObserver("happy")
+  font.load(null, 10000).then(() => {
+    console.log("async fonts loaded")
+  })
+}
 const RootElement = ({ element }) => {
   const [loading, setLoading] = useState(true)
   useEffect(() => {
     importImages().then(() => {
       setLoading(false)
     })
+    importFonts()
   }, [])
   return (
     <div className="root">
